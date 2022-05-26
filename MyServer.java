@@ -1,25 +1,16 @@
 import java.rmi.*;
 import java.rmi.registry.*;
+public class MyServer{
 
-public class MyServer
-{
+public static void main(String args[]){
 
-		public static void main(String args[]){
-			
-			try{
-				Palindrome stub =new PalinRemote();
-				Naming.rebind("localhost",stub);
-			
-			}
+try{
+Adder stub=new AdderRemote();
+Naming.rebind("localhost",stub);
+}
 
+catch(Exception e){System.out.println(e);}
 
-			catch(Exception e)
-			{
-				System.out.println(e);
-			}
-
-
-
-		}
+}
 
 }

@@ -1,39 +1,14 @@
-import java.util.Scanner;
 import java.rmi.*;
+public class MyClient{
 
-public class MyClient
-{
-		public  static void main(String argsj[]){
+public static void main(String args[]){
 
-		try
-		{
-			Palindrome stub=(Palindrome)Naming.lookup("localhost");
-			Scanner input=new Scanner(System.in);
-			String str;
-			System.out.println("Enter String 1:");
-			str=input.nextLine();
-	 		int m=stub.palin_drome(str);
-		
-			if(m==1)
-			{
-				System.out.println("The given string is a palindrome");
-			}
+try{
+Adder stub=(Adder)Naming .lookup("localhost");
+System.out.println(stub.add(34,4));
+}
 
-			else{
-				System.out.println("The given string is not palindrome");
-			}
-			
-		}
-		catch(Exception e){
-				
-				
+catch(Exception e){}
 
-		}
-
-
-		
-	}
-
-
-
+}
 }
